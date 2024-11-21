@@ -7,7 +7,7 @@ export default function ChecklistContainer() {
     const {state, dispatch} = useContext(checkListContext);
     const containerElemnt = state.map(subject => {
         return(
-        <div className='check-list-container'>
+        <div key={subject.subId} className='check-list-container'>
             <div className="container-header">
                 <h4>{subject.header}</h4>
             </div>
@@ -31,6 +31,7 @@ export default function ChecklistContainer() {
     return (
         <>
             {containerElemnt}
+            <p className='author'>@Marcin Król</p>
         </>
     )
 }
