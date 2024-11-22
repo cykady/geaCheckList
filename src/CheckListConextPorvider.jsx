@@ -24,6 +24,30 @@ function checkReducer(state, action) {
                 return subject;
             });
         }
+        case "add":{
+            const nextQuestionId = state.reduce((acc, subject) => {
+                return acc + subject.questions.length;
+            }
+            , 0);
+            return state.map(subject => {
+                if(subject.subId === action.subId){
+                    return {
+                        ...subject,
+                        questions: [
+                            ...subject.questions,
+                            {
+                                queId: nextQuestionId,
+                                question: action.question,
+                                answer: action.answer,
+                                checked: false
+                            }
+                        ]
+                    }
+                }
+                return subject;
+            });
+        }
+            
         default:
             return state;
     }

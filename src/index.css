@@ -71,21 +71,21 @@ li:nth-child(even) {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
+  padding: 0em 0em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
+  /* transition: border-color 0.25s; */
+  background-color: transparent;
 }
-button:hover {
+/* button:hover {
   border-color: #0303b8;
-}
-button:focus,
+} */
+/* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 .headerLayout {
   display: flex;
   flex-direction: row;
@@ -102,6 +102,8 @@ button:focus-visible {
   margin-top: 10px;
 }
 .container-header{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   width: 100%;
   background-color: #BADDEC;
@@ -111,6 +113,12 @@ button:focus-visible {
   background-color: #0303b8;
 }
 
+.new-question-form {
+  display: fixed;
+  bottom: 0;
+  right: 0;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -118,8 +126,5 @@ button:focus-visible {
   }
   a:hover {
     color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
   }
 }
